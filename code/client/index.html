@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/http-vue-loader/src/httpVueLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href='Projet.css' type='text/css' rel='stylesheet' />
+    <title>Nutri’Healthy</title>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+                <router-link to='/'>Nutri’Healthy</router-link> <br>
+                <router-link to='/connexion'>Connexion</router-link>
+
+        </header>
+
+        <router-view @log-user='logUser' @save-user='save'></router-view>
+
+
+        <footer>
+
+        </footer>
+
+    </div>
+    <script src="vue-application.js"></script>
+</body>
+
+</html>
