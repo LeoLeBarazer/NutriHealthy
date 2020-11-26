@@ -1,21 +1,12 @@
 <template>
   <div>
-    <video
-      class="video"
-      fullscreen
-      width="1920"
-      height="1080"
-      loop
-      autoplay
-      muted
-      id="VideoId"
-    >
-      <source src="pc_showcase.mp4" type="video/mp4"/>
-    </video>
-    <br /><br />
-    <div class="titre_index">Bienvenue sur le site L'intérieur des PC</div>
+    
+    <div class="banniere"> 
+      <div class="titre"> Etre dans son assiette!  </div>
+    </div>
 
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    
   </div>
 </template>
 
