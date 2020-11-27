@@ -16,6 +16,7 @@ var app = new Vue({
     router,
     el: '#app',
     data: {
+        menu_state:false
     },
     methods: {
         async save(email, password) {
@@ -34,5 +35,9 @@ var app = new Vue({
             const res1 = await axios.get('/api/composant')
             this.composants = res1.data
         },
+
+        CloseMenu(){
+            this.menu_state=false;
+        }
     }
 })

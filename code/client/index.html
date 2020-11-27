@@ -12,32 +12,47 @@
         @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
     </style>
     <title>Nutri’Healthy</title>
+    
 </head>
 
 <body>
     <div id="app">
         <header>
-                
+            
                 <nav class="menu" role="navigation"> 
-                    <div class="container"> 
-                        <div class="left"> 
-                            <h1 class="nom">Nutri’Healthy</h1>
-                        </div>
-                        <div class="right"> 
-                            <a href="#/"class="link"><i class="fas fa-home"> </i>Home</a>
-                            <router-link class="link" to='/connexion'><i class="fas fa-sign-in-alt"> </i>Log in</router-link>
-                            <router-link class="link" to='/register'><i class="fas fa-user-plus"> </i>Sign up</router-link>
-                            <a href="#"class="link"><i class="fas fa-user"> </i>Profile</a>
-                        </div>
-                    </div>
+                    <h1 class="nom">Nutri’Healthy</h1>
+                    <label>
+                        
+                        <input v-model= "menu_state" type="checkbox"></input>
+                        <span class="menu">
+                            <span class="hamburger"></span>
+                        </span>
+                        <ul>
+                            <li  @click="CloseMenu()">
+                                <a href="#/"class="link"><i class="fas fa-home"> </i>Home</a>
+                            </li>
+                            <li  @click="CloseMenu()">
+                                <router-link class="link" to='/connexion'><i class="fas fa-sign-in-alt"> </i>Log in</router-link>
+                            </li>
+                            <li @click="CloseMenu()">
+                                <router-link class="link"  to='/register'><i class="fas fa-user-plus"> </i>Sign up</router-link>
+                            </li>
+                            
+                            <li @click="CloseMenu()">
+                                <a href="#"class="link" ><i class="fas fa-user"> </i>Profile</a>
+                            </li>
+                        </ul>
+                        
+                    </label>    
 
                     
                 </nav>
-
+         
         </header>
         
-
-        <router-view @log-user='logUser' @save-user='save'></router-view>
+        <div>
+            <router-view @log-user='logUser' @save-user='save'></router-view>
+        </div>
 
 
         <footer>

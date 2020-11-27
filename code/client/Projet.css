@@ -5,6 +5,7 @@
     font-family: 'Nunito', sans-serif;
     font-size: 20px;
     font: weight 900;;
+    margin-left: 50px;
     
 }
 
@@ -12,25 +13,13 @@
 .menu{
     width:100%;
     height:66px;
-    background:red;
+    background:#eceff1;
     line-height: 66px;
    
 }
-.container{
-    width: 80%;
-    margin: auto;
-}
 
-.left{
-    float: left;
-    color:black;
-}
 
-.right{
-    float: right;
-    font-family: 'Nerko One', cursive;
 
-}
 
 .link{
     text-decoration: none;
@@ -40,6 +29,7 @@
     margin: 0 10px;
     transition: 0.5s ease-in-out;
     border-bottom: 3px solid transparent ;
+   
 
 }
 
@@ -53,30 +43,125 @@
 .titre{
     font-family: 'Nunito', sans-serif;
     font-size: 80px;
-    margin-left: 800px;
-    padding-top: 200px;
+    margin:0;
+    margin-left:50vw;
+    padding-top: 150px;
+
+
+  
 }
 .titre2{
     font-family: 'Nunito', sans-serif;
     font-size: 20px;
-    margin-left: 800px;
-    padding-top: 50px ;
+    margin:0;
+    margin-left:50vw;
+   
     
 }
 .banniere{
     background-image: url("https://cdn.discordapp.com/attachments/517778056065318912/781827373767065620/photo-1490818387583-1baba5e638af.png");    
     background-repeat: no-repeat;
     background-size: cover;
-    margin: auto;
     height: 650px;
     
 }
 
-@media only screen and (max-width:880px){
-    .right{
-        display:none;
-    }
-}
 
+
+@import url('https://fonts.googleapis.com/css?family=Cutive+Mono');
+ *, *:before, *:after {
+	 box-sizing: border-box;
+}
+ html {
+	 font-size: 18px;
+}
+ body {
+     font-family: 'Nerko One', cursive;
+	 font-size: 1.2em;
+	 line-height: 1.6;
+	 background: #ccc;
+	 overflow-x: hidden;
+}
+ label .menu {
+	 position: absolute;
+	 right: -100px;
+     top: -100px;
+	 z-index: 100;
+	 width: 200px;
+	 height: 200px;
+	 background: rgba(255, 255, 255, 0) ;
+	 border-radius: 50% 50% 50% 50%;
+	 transition: 0.5s ease-in-out;
+	 box-shadow: 0 0 0 0 #fff, 0 0 0 0 #fff;
+	 cursor: pointer;
+}
+ label .hamburger {
+	 position: absolute;
+	 top: 135px;
+	 left: 50px;
+	 width: 30px;
+	 height: 2px;
+	 background: #000;
+	 display: block;
+	 transform-origin: center;
+	 transition: 0.5s ease-in-out;
+}
+ label .hamburger:after, label .hamburger:before {
+	 transition: 0.5s ease-in-out;
+	 content: "";
+	 position: absolute;
+	 display: block;
+	 width: 100%;
+	 height: 100%;
+	 background: #000;
+}
+ label .hamburger:before {
+	 top: -10px;
+}
+ label .hamburger:after {
+	 bottom: -10px;
+}
+ label input {
+	 display: none;
+}
+ label input:checked + .menu {
+	 box-shadow: 0 0 0 100vw #fff, 0 0 0 100vh #fff;
+	 border-radius: 0;
+}
+ label input:checked + .menu .hamburger {
+	 transform: rotate(45deg);
+}
+ label input:checked + .menu .hamburger:after {
+	 transform: rotate(90deg);
+	 bottom: 0;
+}
+ label input:checked + .menu .hamburger:before {
+	 transform: rotate(90deg);
+	 top: 0;
+}
+ label input:checked + .menu + ul {
+	 display:block;
+}
+ label ul {
+    list-style:none;
+	 z-index: 200;
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 transform: translate(-50%, -50%);
+	 display:none;
+	 transition: 0.25s 0s ease-in-out;
+}
+ label a {
+	 margin-bottom: 1em;
+	 display: block;
+	 color: #000;
+	 text-decoration: none;
+}
+ nav h1 {
+	 
+	 width: 80%;
+	 
+}
 
 
