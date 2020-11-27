@@ -2,8 +2,8 @@
   <div>
     
     <div class="banniere"> 
-      <h1 class="titre"> Etre dans son assiette!  </h1>
-      <p class="titre2"> Comment trouver le bien etre dans son alimentation?</p> 
+      <h1 class="titre">Être dans son assiette!  </h1>
+      <p class="titre2"> Comment trouver le bien être dans son alimentation?</p> 
     </div>
 
 

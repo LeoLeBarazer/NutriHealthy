@@ -12,7 +12,7 @@
 .menu{
     width:100%;
     height:66px;
-    background:white;
+    background:red;
     line-height: 66px;
    
 }
@@ -76,4 +76,39 @@
     height: 650px;
     
 }
+
+.nav-toggle{
+    
+    width:40px;
+    height:70px;
+    display:flex;
+    align-items: center;
+
+}
+
+span.m-toggle-icone,span.m-toggle-icone:before,span.m-toggle-icone:after{
+    content:"";
+    display: block;
+    widows: 100%;
+    height: 2px;
+    position:relative;
+    
+}
+span.m-toggle-icone:before{
+    top: 10px;
+    
+}
+
+span.m-toggle-icone:after{
+    top:-14px;
+    
+}
+
+@media only screen and (max-width:880px){
+    .right{
+        display:none;
+    }
+}
+
+
 
