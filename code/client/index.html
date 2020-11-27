@@ -6,7 +6,9 @@
     <script src="https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link href='Projet.css' type='text/css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <style>
+       @import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
     </style>
     <title>Nutri’Healthy</title>
@@ -15,8 +17,21 @@
 <body>
     <div id="app">
         <header>
-                <h1 class="nom">Nutri’Healthy</h1> <br>
-                <router-link to='/connexion'>Connexion</router-link>
+                
+                <nav class="menu" role="navigation"> 
+                    <div class="container"> 
+                        <div class="left"> 
+                            <h1 class="nom">Nutri’Healthy</h1>
+                        </div>
+                        <div class="right"> 
+                            <a href="#"class="link"><i class="fas fa-home"> </i>Home</a>
+                            <router-link class="link" to='/connexion'><i class="fas fa-sign-in-alt"> </i>Log in</router-link>
+                            <a href="#"class="link"><i class="fas fa-user-plus"> </i>Sign up</a>
+                            <a href="#"class="link"><i class="fas fa-user"> </i>Profile</a>
+                        </div>
+                    </div>
+                    
+                </nav>
 
         </header>
         

@@ -1,17 +1,76 @@
 * {     margin: 0;     padding: 0; }
 
+
 .nom{
-    font-size: medium;
     font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    font: weight 900;;
+    
+}
+
+
+.menu{
+    width:100%;
+    height:66px;
+    background:white;
+    line-height: 66px;
+   
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
+
+.left{
+    float: left;
+    color:black;
+}
+
+.right{
+    float: right;
+    font-family: 'Nerko One', cursive;
+
+}
+
+.link{
+    text-decoration: none;
+    color:black;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0 10px;
+    transition: 0.5s ease-in-out;
+    border-bottom: 3px solid transparent ;
+
+}
+
+.link:hover{
+    border-color: black;
+    padding-bottom: 5px;
+}
+.link i{
+    margin-right: 5px ;
 }
 .titre{
+    font-family: 'Nunito', sans-serif;
+    font-size: 80px;
+    margin-left: 800px;
+    padding-top: 200px;
+}
+.titre2{
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    margin-left: 800px;
+    padding-top: 50px ;
     
 }
 .banniere{
     
-    border: solid black;
-    background: linear-gradient( rgba(247, 223, 223, 0.856), #fc7c87);
-    width:90%;
+    
+    
+    background-image: url("https://cdn.discordapp.com/attachments/517778056065318912/781827373767065620/photo-1490818387583-1baba5e638af.png");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: auto;
     margin-top: 10px;
     height: 650px;
