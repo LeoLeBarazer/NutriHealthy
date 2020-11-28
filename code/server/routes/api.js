@@ -92,4 +92,83 @@ router.post('/connexion', (req, res) => {
     })
 })
 
+/**
+ * Sport
+ */
+
+ //Creer une activité
+ router.post('/suivit', async(req, res) => {
+    // récuperer l'information
+    const activite = req.body.activite;
+    const temps = req.body.temps;
+    const calories = req.body.calories;
+
+    //verifie la fiabilité de l'info
+    if (typeof activite !== 'string' || activite === '' ||
+        isNaN(temps)||
+        isNaN(calories)) {
+        res.status(400).json({ message: 'bad request' })
+        return
+    }
+    // verifie si utilisateur connecté
+    if (req.session.userId === undefined) {
+        res.status(401).json({ message: 'Unauthorized' })
+        return
+    }
+
+    // ajouter le composant
+    let result = await client.query({
+        text: "INSERT INTO sports (activite, temps, calories) VALUES ($1, $2, $3) RETURNING *",
+        values: [activite, temps, calories]
+    })
+
+    // reenvoyer une reponse au client
+    res.json(result.rows[0])
+})
+
+//Creer une nouriture
+router.post('/suivit', async(req, res) => {
+    // récuperer l'information
+    const ingredient = req.body.ingredient;
+    const quantite = req.body.quantite;
+    const calories = req.body.calories;
+
+    //verifie la fiabilité de l'info
+    console.log(test1)
+    if (typeof ingredient !== 'string' || ingredient === '' ||
+        isNaN(quantite)||
+        isNaN(calories)) {
+        res.status(400).json({ message: 'bad request' })
+        return
+    }
+    console.log(test2)
+
+    // verifie si utilisateur connecté
+    if (req.session.userId === undefined) {
+        res.status(401).json({ message: 'Unauthorized' })
+        return
+    }
+    console.log(test3)
+
+    addManger(ingredient, quantite, calories).then((result)=>{
+        res.json(result.rows[0])
+    })
+    // ajouter le composant
+    /*let result = await client.query({
+        text: "INSERT INTO nourritures (ingredient, quantite, calories) VALUES ($1, $2, $3) RETURNING *",
+        values: [ingredient, quantite, calories]
+    })
+    console.log(test4)*/
+
+    // reenvoyer une reponse au client
+    res.json(result.rows[0])
+})
+
+async function addManger(ingredient, quantite, calories) {
+    return await client.query({
+        text: "INSERT INTO nourritures (ingredient, quantite, calories) VALUES ($1, $2, $3) RETURNING *",
+        values: [ingredient, quantite, calories]
+    })
+}
+
 module.exports = router
