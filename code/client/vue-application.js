@@ -2,12 +2,16 @@ const Home = window.httpVueLoader('./components/Home.vue')
 const Connexion = window.httpVueLoader('./components/connexion.vue')
 const Register = window.httpVueLoader('./components/Register.vue')
 const Suivit = window.httpVueLoader('./components/Suivit.vue')
+const ASport = window.httpVueLoader('./components/ASport.vue')
+const ARepas = window.httpVueLoader('./components/ARepas.vue')
 
 const routes = [
     { path: '/', component: Home },
     { path: '/connexion', component: Connexion },
     { path: '/register', component: Register },
     { path: '/suivit', component: Suivit },
+    { path: '/asport', component: ASport },
+    { path: '/arepas', component: ARepas },
 ]
 
 const router = new VueRouter({
@@ -38,12 +42,12 @@ var app = new Vue({
         },
         async AddSport(sport) {
             console.log(sport);
-            const res = await axios.post('/api/suivit', sport)
+            const res = await axios.post('/api/asport', sport)
             this.sports.push(res.data)
         },
         async AddNourritures(nourriture) {
             console.log(nourriture);
-            const res = await axios.post('/api/suivit', nourriture)
+            const res = await axios.post('/api/arepas', nourriture)
             this.nourritures.push(res.data)
         },
 
