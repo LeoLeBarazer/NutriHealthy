@@ -1,21 +1,32 @@
 <template>
     <div id ="login">
         <form @submit.prevent="save">
+            
             <div class="div-connexion">
-                <p class="titre">Créé votre compte :</p>
-                <input class="texte-connexion" type="text" v-model="email" placeholder="Entrez votre e-mail"/>
-                <br/>
-                <input class="texte-connexion" type="text" v-model="password" placeholder="Entrez votre mot de passe"/>
+                <h1>Login</h1>
+                <form>
+                    <div class="textbox">
+                        <p> E-mail </p>
+                        <input class="texte-connexion" type="text" v-model="email" placeholder="Entrez votre e-mail"/>
+                        <br/>
+                        <p> Password</p>
+                        <input class="texte-connexion" type="text" v-model="password" placeholder="Entrez votre mot de passe"/>
+                        <br/>
+                        <input type="submit" name="" value="Login"> 
+                        <br/> 
+                        <button type="submit">Connexion</button> <br/>
+                        <a href= "#"> Lost your password ?</a> 
+                        <br/>
+                        <a href="#"> Don't have an account ?</a>
+                    </div>
+                </form>
             </div>
-            <br/>
-            <div class="div-button">   
-                <button class="button-connexion" type="submit">Envoyer</button>
-                <br/>
-                <p class="texte-connexion">Cliquez ici pour vous <a class="button-connexion" href="#/Connexion">connecter</a></p>
-            </div>
+           
         </form>
     </div>
 </template>
+
+
 
 <script>
 module.exports = {

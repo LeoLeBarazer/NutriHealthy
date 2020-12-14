@@ -164,4 +164,90 @@
 	 
 }
 
+#login .div-connexion {
+	
+	width: 320px;
+	height: 530px;
+	background-color: black;
+	color: #fff;
+	top: 50%;
+	left: 50%;
+	position:absolute;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	font-family:'Nunito', sans-serif ;
+	padding: 70px 30px;
+	
+}
 
+#login h1{
+	margin:0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 22 px;
+}
+
+#login .div-connexion p{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+}
+
+#login .div-connexion input{
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+#login .div-connexion input[type="text"], input[type="password"]{
+	border: none;
+	border-bottom: 1px solid #fff ;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color:#fff;
+	font-size: 16px;
+}
+
+#login .div-connexion input[type="submit"]{
+	border: none;
+	outline:none;
+	height:40px;
+	background: #b7eaf3;
+	color: #fff;
+	font-size: 18px;
+	border-radius:20px;
+}
+
+#login .div-connexion input[type="submit"]:hover{
+	cursor: pointer;
+	background: #ffffff; ;
+	color: #000;
+}
+#login .div-connexion a{
+	text-decoration: none ;
+	font: size 12px;
+	line-height: 20px;
+	color: rgb(196, 231, 245);
+}
+
+#login .div-connexion a:hover{
+	color: #ffffff;
+}
+
+#login .div-connexion button[type="submit"]{
+	border: none;
+	outline:none;
+	height:40px;
+	background: #b7eaf3;
+	color: #fff;
+	font-size: 18px;
+	border-radius:20px;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+#login .div-connexion button[type="submit"]:hover{
+	cursor: pointer;
+	background: #ffffff; ;
+	color: #000;
+}
