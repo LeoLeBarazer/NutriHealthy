@@ -3,7 +3,7 @@
         <form @submit.prevent="save">
             
             <div class="div-connexion">
-                <h1>Login</h1>
+                <h1>Register</h1>
                 <form>
                     <div class="textbox">
                         <p> E-mail </p>
@@ -12,9 +12,9 @@
                         <p> Password</p>
                         <input class="texte-connexion" type="text" v-model="password" placeholder="Entrez votre mot de passe"/>
                         <br/>
-                        <input type="submit" name="" value="Login"> 
+                        <input type="submit" name="" value="Sign up"> 
                         <br/> 
-                        <button type="submit">Connexion</button> <br/>
+                        <button type="submit">Login</button> <br/>
                         <a href= "#"> Lost your password ?</a> 
                         <br/>
                         <a href="#"> Don't have an account ?</a>
