@@ -1,11 +1,14 @@
 <template>
     <div id ="login">
         <form @submit.prevent="save">
-            
             <div class="div-connexion">
                 <h1>Register</h1>
                 <form>
                     <div class="textbox">
+                        
+                        <div class="text">Vous avez deja un compte ?</div><br/> 
+                        <div class="text2">Connectez nous ! </div>
+                        
                         <p> E-mail </p>
                         <input class="texte-connexion" type="text" v-model="email" placeholder="Entrez votre e-mail"/>
                         <br/>
@@ -14,14 +17,12 @@
                         <br/>
                         <input type="submit" name="" value="Sign up"> 
                         <br/> 
-                        <button type="submit">Login</button> <br/>
-                        <a href= "#"> Lost your password ?</a> 
-                        <br/>
-                        <a href="#"> Don't have an account ?</a>
+                        <button type="submit_log">Login</button> <br/>
+                      
                     </div>
-                </form>
-            </div>
-           
+                </form> 
+            </div> 
+          
         </form>
     </div>
 </template>
