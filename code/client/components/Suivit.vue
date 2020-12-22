@@ -1,33 +1,35 @@
 <template>
     <div id ="suivit">
-        <form @submit.prevent="AddSport">
-            <div class="div-connexion">
-                <p>Ajoutez une activité sportive</p>
-                <input class="texte-connexion" type="text" v-model="newSport.activite" placeholder="Entrez le nom de votre activité"/>
-                <br/>
-                <input class="texte-connexion" type="number" v-model="newSport.temps" placeholder="Combien de temps avez vous pratiqué votre activité ?(en heures)"/>
-                <br/>
-                <input class="texte-connexion" type="number" v-model="newSport.calories" placeholder="Combien de calories avez vous brulez ?"/>
-            </div>
-            <br/>
-            <div class="div-button">
-                <button class="button-connexion" type="submit">Envoyer</button>
-            </div>
+        <p>Ajoutez une demi journée (avec une activité sportive et un repas) ou créez votre popre activité sportive ou repas.</p>
+        <router-link class="link"  to='/asport'>Ajoutez votre sport préférer</router-link>
+        <router-link class="link"  to='/arepas'>Ajoutez votre nouriture préférer</router-link>
+        <form @submit.prevent="AddDemiJ">
+            <select name="activite" id="activite" v-model="newDemiJ.activite">
+                <option value="">Saisir le nom de votre activite</option>
+                <option v-for="sport in sports" :key="sport.id">
+                    {{sport.activite}}
+                </option>
+            </select>
+            <select name="temps" id="temps" v-model="newDemiJ.temps">
+                <option value="">Combien de temps avez vous fait cette activité ? (en heure)</option>
+                <option v-for="sport in sports" :key="sport.id">
+                    {{sport.temps}}h
+                </option>
+            </select>
+            <select name="nouriture" id="nouriture" v-model="newDemiJ.nouriture">
+                <option value="">Qu'avez vous mangé ?</option>
+                <option v-for="nourriture in nourritures" :key="nourriture.id">
+                    {{nourriture.ingredient}}
+                </option>
+            </select>
+             <select name="quantite" id="quantite" v-model="newDemiJ.quantite">
+                <option value="">Qu'avez vous mangé ?</option>
+                <option v-for="nourriture in nourritures" :key="nourriture.id">
+                    {{nourriture.quantite}}
+                </option>
+            </select>
         </form>
-        <form @submit.prevent="AddNourritures">
-            <div class="div-connexion">
-                <p>Ajoutez une nourriture</p>
-                <input class="texte-connexion" type="text" v-model="newNourritures.ingredient" placeholder="Entrez le nom de votre ingredient"/>
-                <br/>
-                <input class="texte-connexion" type="number" v-model="newNourritures.quantite" placeholder="Quel quantité en avez vous mangé ?(en grammes)"/>
-                <br/>
-                <input class="texte-connexion" type="number" v-model="newNourritures.calories" placeholder="Combien de calories avez vous absorber ?"/>
-            </div>
-            <br/>
-            <div class="div-button">
-                <button class="button-connexion" type="submit">Envoyer</button>
-            </div>
-        </form>
+        <button class="button1" type="submit" @click="AddDemiJ()">Ajouter</button>
     </div>
 </template>
 
@@ -36,32 +38,24 @@ module.exports = {
   props: {
       sports: {type: Array, default: []},
       nourritures: {type: Array, default: []},
+      demiJ: {type: Array, default: [[]]},
   },
   data() {
       return {
-          newSport:{
+          newDemiJ:{
               activite: "",
               temps: "",
-              calories: ""
+              nouriture: "",
+              quantite: ""
           },
-            newNourritures:{
-                ingredient: "",
-                quantite: "",
-                calories: ""
-            },
       };
   },
   methods: {
-      AddSport(){
-          this.newSport.temps=parseInt(this.newSport.temps)
-          this.newSport.calories=parseInt(this.newSport.calories)
-          this.$emit("add-sport", this.newSport);
-      },
-    AddNourritures(){
-            this.newNourritures.quantite=parseInt(this.newNourritures.quantite)
-          this.newNourritures.calories=parseInt(this.newNourritures.calories)
-          this.$emit("add-nourritures", this.newNourritures);
-      },
+      /*AddDemiJ(){
+          this.newDemiJ.activite=this.newDemiJ.activite
+          this.newDemiJ.temps=this.newDemiJ.temps
+          this.$emit("add-demiJ", this.newSport);
+      },*/
   },
 };
 

@@ -14,20 +14,6 @@
                 <button class="button-connexion" type="submit">Envoyer</button>
             </div>
         </form>
-        <form @submit.prevent="AddNourritures">
-            <div class="div-connexion">
-                <p>Ajoutez une nourriture</p>
-                <input class="texte-connexion" type="text" v-model="newNourritures.ingredient" placeholder="Entrez le nom de votre ingredient"/>
-                <br/>
-                <input class="texte-connexion" type="number" v-model="newNourritures.quantite" placeholder="Quel quantité en avez vous mangé ?(en grammes)"/>
-                <br/>
-                <input class="texte-connexion" type="number" v-model="newNourritures.calories" placeholder="Combien de calories avez vous absorber ?"/>
-            </div>
-            <br/>
-            <div class="div-button">
-                <button class="button-connexion" type="submit">Envoyer</button>
-            </div>
-        </form>
     </div>
 </template>
 

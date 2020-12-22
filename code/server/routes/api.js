@@ -158,4 +158,45 @@ router.post('/arepas', async(req, res) => {
 })
 
 
+//Gérrer le suivit
+router.get('/suivit', async(req, res) => {
+    // verifie si utilisateur connecté
+    if (req.session.userId === undefined) {
+        res.status(401).json({ message: 'Unauthorized' })
+        return
+    }
+
+    // reenvoyer une reponse au client
+    let result = await client.query({
+        text: "SELECT * FROM users WHERE id=$1",
+        values:[req.session.userId]
+    })
+
+    res.json(result.rows)
+})
+
+router.get('/', async(req, res) => {
+    // verifie si utilisateur connecté
+    if (req.session.userId === undefined) {
+        res.status(401).json({ message: 'Unauthorized' })
+        return
+    }
+
+    // reenvoyer une reponse au client
+    let result = await client.query({
+        text: "SELECT * FROM sports",
+    })
+
+    let Result = await client.query({
+        text: "SELECT * FROM nourritures",
+    })
+
+    BigTab=[result.rows, Result.rows]
+    console.log(BigTab);
+    res.json(BigTab)
+    
+
+
+})
+
 module.exports = router
