@@ -16,7 +16,9 @@
                     {{sport.temps}}h
                 </option>
             </select>
-            <select name="nouriture" id="nouriture" v-model="newDemiJ.nouriture">
+        </form>
+        <form>
+            <select name="type" id="type" v-model="newDemiJ.type">
                 <option value="">Qu'avez vous mangé ?</option>
                 <option v-for="nourriture in nourritures" :key="nourriture.id">
                     {{nourriture.ingredient}}
@@ -45,17 +47,19 @@ module.exports = {
           newDemiJ:{
               activite: "",
               temps: "",
-              nouriture: "",
+              type: "",
               quantite: ""
           },
       };
   },
   methods: {
-      /*AddDemiJ(){
-          this.newDemiJ.activite=this.newDemiJ.activite
+      AddDemiJ(){
+          /*this.newDemiJ.activite=this.newDemiJ.activite
           this.newDemiJ.temps=this.newDemiJ.temps
-          this.$emit("add-demiJ", this.newSport);
-      },*/
+          this.$emit("add-demiJ", this.newSport);*/
+          console.log(this.sports);
+          console.log(this.nourritures);
+      },
   },
 };
 

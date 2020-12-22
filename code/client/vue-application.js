@@ -28,11 +28,13 @@ var app = new Vue({
         menu_state:false
     },
     async mounted() {
-        axios.get('/api/suivit').then(res =>this.demiJ = res.data)
-        axios.get('/api/').then(
-            res =>this.sports = res.data[0],        //probleme ici
-            res =>this.nourritures = res.data[1])
-            console.log(nourritures);
+        axios.get('/api/suivit').then(res =>this.demiJ = res.data),
+        axios.get('/api/').then(res =>{
+            let Bigtab = res.data
+            this.sports = Bigtab[0]
+            this.nourritures = Bigtab[1]
+            console.log(this.sports),
+            console.log(this.nourritures)})
     },
     methods: {
         async save(email, password) {
