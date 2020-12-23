@@ -6,19 +6,18 @@
                 <form>
                     <div class="textbox">
                         
-                        <div class="text">Vous avez deja un compte ?</div><br/> 
-                        <div class="text2">Connectez nous ! </div>
-                        
                         <p> E-mail </p>
                         <input class="texte-connexion" type="text" v-model="email" placeholder="Entrez votre e-mail"/>
                         <br/>
-                        <p> Password</p>
+                        <p> Mot de passe</p>
                         <input class="texte-connexion" type="text" v-model="password" placeholder="Entrez votre mot de passe"/>
                         <br/>
                         <input type="submit" name="" value="Sign up"> 
                         <br/> 
-                        <button type="submit_log">Login</button> <br/>
-                      
+                        <button type="submit">Login</button> <br/>
+                        <video class="video" fullscreen width="1920" height="1080" loop autoplay muted id=VideoId>
+                            <source src="Avocado.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </form> 
             </div> 

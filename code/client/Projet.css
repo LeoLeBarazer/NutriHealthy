@@ -165,12 +165,16 @@
 	 
 }
 
+#login{
+	background-color:rgb(249, 247, 240);
+}
+
 #login .div-connexion {
 	
 	width: 950px;
 	height: 530px;
-	background-color: rgb(0, 0, 0);
-	color: #fff;
+	background-color:rgb(249, 247, 240);
+	color: black;
 	top: 50%;
 	left: 50%;
 	position:absolute;
@@ -180,6 +184,7 @@
 	padding: 70px 30px;
 	border-radius:15px;
 	padding-left: 80px ;
+	background-image: url("");
 
 	
 }
@@ -229,7 +234,7 @@
 
 #login .div-connexion input[type="text"], input[type="password"]{
 	border: none;
-	border-bottom: 1px solid #fff ;
+	border-bottom: 1px solid black ;
 	background: transparent;
 	outline: none;
 	height: 40px;
@@ -242,15 +247,17 @@
 	outline:none;
 	height:40px;
 	background: #b7eaf3;
-	color: #fff;
+	color: black;
 	font-size: 18px;
 	border-radius:20px;
+	
 }
 
 #login .div-connexion input[type="submit"]:hover{
 	cursor: pointer;
 	background: #ffffff; ;
 	color: #000;
+	border:solid black 1px;
 }
 #login .div-connexion a{
 	text-decoration: none ;
@@ -261,6 +268,7 @@
 
 #login .div-connexion a:hover{
 	color: #ffffff;
+
 }
 
 #login .div-connexion button[type="submit"]{
@@ -268,7 +276,7 @@
 	outline:none;
 	height:40px;
 	background: #b7eaf3;
-	color: #fff;
+	color: black;
 	font-size: 18px;
 	border-radius:20px;
 	width: 30%;
@@ -279,28 +287,15 @@
 	cursor: pointer;
 	background: #ffffff; ;
 	color: #000;
+	border:solid black 1px;
 }
 
-#login .div-connexion button[type="submit_log"]{
-	border: none;
-	outline:none;
-	height:40px;
-	background: #b7eaf3;
-	color: #fff;
-	font-size: 18px;
-	border-radius:20px;
-	width: 30%;
-	margin-bottom: 20px;
+#login .div-connexion .video{
+	width: 500px;
+	margin-top: -730px;
+	margin-left: 310px;
+	
 }
 
-#login .div-connexion button[type="submit_log"]:hover{
-	cursor: pointer;
-	background: #ffffff; ;
-	color: #000;
-}
 
-#login .div-connexion button[type="submit_log"]{
-	position: absolute;
-	left: 55%;
-	top: 58%;
-}
+
