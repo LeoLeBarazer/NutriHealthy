@@ -24,7 +24,7 @@ var app = new Vue({
     data: {
         nourritures: [],
         sports: [],
-        demiJ: [[]],
+        demiJ: [],
         menu_state:false
     },
     async mounted() {
@@ -44,6 +44,11 @@ var app = new Vue({
         async logUser(email, password) {
             try {
                 const res = await axios.post('/api/connexion', { email: email, password: password })
+                //Récup les donnés 
+                axios.get('/api/').then(res =>{
+                    let Bigtab = res.data
+                    this.sports = Bigtab[0]
+                    this.nourritures = Bigtab[1]})
                 window.location.href = "#/"
 
             } catch (error) {
@@ -63,6 +68,12 @@ var app = new Vue({
 
         CloseMenu(){
             this.menu_state=false;
+        },
+
+        async AddDemiJ(newDemiJ){
+            console.log('CCCCCCC');
+            const res = await axios.post('/api/suivit', newDemiJ)
+            this.demiJ.push(res.data)
         }
     }
 })

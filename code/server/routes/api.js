@@ -159,6 +159,8 @@ router.post('/arepas', async(req, res) => {
 
 
 //Gérrer le suivit
+
+//récup les activitées/sport
 router.get('/suivit', async(req, res) => {
     // verifie si utilisateur connecté
     if (req.session.userId === undefined) {
@@ -173,6 +175,67 @@ router.get('/suivit', async(req, res) => {
     })
 
     res.json(result.rows)
+})
+
+//poster une nouvelle demi journée
+router.post('/suivit', async(req, res) => {
+    const activite = req.body.activite;
+    const temps = req.body.temps;
+    const type = req.body.type;
+    const quantite = req.body.quantite;
+
+    if (req.session.userId === undefined) {
+        res.status(401).json({ message: 'Unauthorized' })
+        return
+    }
+
+    // reenvoyer une reponse au client
+    var tabUser_sport = await client.query({
+        text: "SELECT sport FROM users WHERE id=$1",
+        values:[req.session.userId]
+    })
+
+    var tabUser_nourriture = await client.query({
+        text: "SELECT nourriture FROM users WHERE id=$1",
+        values:[req.session.userId]
+    })
+
+    var IDsport = await client.query({
+        text: "SELECT id FROM sports WHERE activite=$1 AND temps=$2",
+        values:[activite, temps]
+    })
+
+    var IDnourriture = await client.query({
+        text: "SELECT id FROM nourritures WHERE ingredient=$1 AND quantite=$2",
+        values:[type, quantite]
+    })
+
+    console.log('activite:'+activite);
+    console.log('temps:'+temps);
+    console.log('type:'+type);
+    console.log('quantite:'+quantite);
+
+    console.log(IDnourriture.rows);
+    console.log(IDsport.rows);
+
+    tabUser_sport.rows=tabUser_sport.rows[0].sport
+    tabUser_nourriture.rows=tabUser_nourriture.rows[0].nourriture
+
+    console.log(tabUser_sport.rows);
+    console.log(tabUser_nourriture.rows);
+
+    tabUser_sport.rows.push(IDsport.rows[0].id);
+    tabUser_nourriture.rows.push(IDnourriture.rows[0].id);
+
+    console.log(tabUser_sport.rows);
+    console.log(tabUser_nourriture.rows);
+
+    let result = await client.query({
+        text: "INSERT INTO users (sport, nourriture) VALUES ($1, $2) RETURNING *",
+        values: [tabUser_sport.rows, tabUser_nourriture.rows]
+    })
+
+    res.json(result.row[0])
 })
 
 router.get('/', async(req, res) => {
@@ -194,9 +257,6 @@ router.get('/', async(req, res) => {
     BigTab=[result.rows, Result.rows]
     console.log(BigTab);
     res.json(BigTab)
-    
-
-
 })
 
 module.exports = router
