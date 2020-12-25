@@ -18,10 +18,10 @@ client.connect()
  * Connection
  */
 async function save(email, password) {
-    const sql = "INSERT INTO users (email, password) VALUES ($1, $2) RETURNING *"
+    const sql = "INSERT INTO users (email, password,nourriture, sport) VALUES ($1, $2, $3, $4) RETURNING *"
     return await client.query({
         text: sql,
-        values: [email, password]
+        values: [email, password,'{0}' , '{0}']
     })
 }
 
@@ -231,11 +231,11 @@ router.post('/suivit', async(req, res) => {
     console.log(tabUser_nourriture.rows);
 
     let result = await client.query({
-        text: "INSERT INTO users (sport, nourriture) VALUES ($1, $2) RETURNING *",
-        values: [tabUser_sport.rows, tabUser_nourriture.rows]
+        text: "UPDATE users SET sport=$1, nourriture=$2 WHERE id=$3 RETURNING *",
+        values: [tabUser_sport.rows, tabUser_nourriture.rows, req.session.userId]
     })
 
-    res.json(result.row[0])
+    res.json(result.rows)
 })
 
 router.get('/', async(req, res) => {

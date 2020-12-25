@@ -14,7 +14,7 @@
                         <br/>
                         <input type="submit" name="" value="Sign up"> 
                         <br/> 
-                        <button type="submit">Login</button> <br/>
+                        <button type="submit" @click="save()">Login</button> <br/>
                         <video class="video" fullscreen width="1920" height="1080" loop autoplay muted id=VideoId>
                             <source src="Avocado.mp4" type="video/mp4">
                         </video>
