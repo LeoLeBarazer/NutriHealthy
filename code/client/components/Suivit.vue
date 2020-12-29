@@ -30,6 +30,23 @@
             </select>
         </form>
         <button class="button1" type="submit" @click="AddDemiJ()">Ajouter</button>
+        <p>vos activitées enregistrées</p>
+        <tr> 
+          <td>CPU</td>
+          <td>GPU</td>
+          <td>RAM</td>
+          <td>Refroidissement</td>
+          <td>Stockage</td>
+          <td>Alimentation</td>
+        </tr>
+        <tr v-for="ordinateur in ordinateurs" :key="ordinateur.id">
+          <td>{{ordinateur.cpu}}</td>
+          <td>{{ordinateur.gpu}}</td>
+          <td>{{ordinateur.ram}}</td>
+          <td>{{ordinateur.refroidissement}}</td>
+          <td>{{ordinateur.stockage}}</td>
+          <td>{{ordinateur.alimentation}}</td>
+        </tr>    
     </div>
 </template>
 
