@@ -2,18 +2,18 @@
     <div id ="connexion">
         <div class="center">
             <h1>Login</h1>
-            <form method="post">
+            <form>
                 <div class="txt_field">
-                    <input type="text" required>
+                    <input type="text" v-model="email" required>
                     <span></span>
                     <label> E-mail</label>
                 </div>
                 <div class="txt_field">
-                    <input type="password1" required>
+                    <input type="password1" v-model="password" required>
                     <span></span>
                     <label> Mot de passe</label>
                 </div>     
-                <input type="submit" value="Login">
+                <input type="submit" value="Login" @click="log()">
                 
             </form>
         </div>
