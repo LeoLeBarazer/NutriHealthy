@@ -24,11 +24,11 @@ var app = new Vue({
     data: {
         nourritures: [],
         sports: [],
-        demiJ: [],
+        demiJs: [],
         menu_state:false
     },
     async mounted() {
-        axios.get('/api/suivit').then(res =>this.demiJ = res.data),
+        axios.get('/api/suivit').then(res =>this.demiJs = res.data),
         axios.get('/api/').then(res =>{
             let Bigtab = res.data
             this.sports = Bigtab[0]

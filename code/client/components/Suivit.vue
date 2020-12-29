@@ -30,7 +30,17 @@
             </select>
         </form>
         <button class="button1" type="submit" @click="AddDemiJ()">Ajouter</button>
-        <p>vos activitées enregistrées</p>   
+        <p>vos activitées enregistrées</p>
+        {{demiJs}}
+        <tr> 
+          <td>CPU</td>
+          <td>GPU</td>
+          <td>RAM</td>
+        </tr>
+        <tr v-for="demiJ in demiJs" :key="demiJ.id">
+          <td>{{demiJ}}</td>
+          <td>{{demiJ}}</td>
+        </tr>
     </div>
 </template>
 
@@ -39,7 +49,12 @@ module.exports = {
   props: {
       sports: {type: Array, default: []},
       nourritures: {type: Array, default: []},
-      demiJ: {type: Array, default: []},
+      demiJs:  {
+        type: Array,
+        default() {
+            return []
+        }
+      }
   },
   data() {
       return {
