@@ -4,6 +4,7 @@ const Register = window.httpVueLoader('./components/Register.vue')
 const Suivit = window.httpVueLoader('./components/Suivit.vue')
 const ASport = window.httpVueLoader('./components/ASport.vue')
 const ARepas = window.httpVueLoader('./components/ARepas.vue')
+const Conversions = window.httpVueLoader('./components/Conversions.vue')
 
 const routes = [
     { path: '/', component: Home },
@@ -12,6 +13,7 @@ const routes = [
     { path: '/suivit', component: Suivit },
     { path: '/asport', component: ASport },
     { path: '/arepas', component: ARepas },
+    { path: '/conversions', component: Conversions },
 ]
 
 const router = new VueRouter({
