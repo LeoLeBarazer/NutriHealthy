@@ -174,6 +174,8 @@ router.get('/suivit', async(req, res) => {
         values:[req.session.userId]
     })
 
+    console.log('user:');
+    console.log(result.rows);
     res.json(result.rows)
 })
 
