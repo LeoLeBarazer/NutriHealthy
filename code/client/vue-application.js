@@ -28,7 +28,6 @@ var app = new Vue({
         menu_state:false
     },
     async mounted() {
-        axios.get('/api/suivit').then(res =>this.demiJs = res.data),
         axios.get('/api/').then(res =>{
             let Bigtab = res.data
             this.sports = Bigtab[0]
@@ -49,6 +48,8 @@ var app = new Vue({
                     let Bigtab = res.data
                     this.sports = Bigtab[0]
                     this.nourritures = Bigtab[1]})
+                axios.get('/api/suivit').then(res =>this.demiJs = res.data)
+                console.log(demiJs); //erreur là 
                 window.location.href = "#/"
 
             } catch (error) {

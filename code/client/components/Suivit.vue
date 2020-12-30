@@ -31,7 +31,7 @@
         </form>
         <button class="button1" type="submit" @click="AddDemiJ()">Ajouter</button>
         <p>vos activitées enregistrées</p>
-        {{demiJs}}
+        {{demiJs.id}}
         <tr> 
           <td>CPU</td>
           <td>GPU</td>
