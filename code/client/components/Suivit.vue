@@ -33,9 +33,9 @@
         <p>vos activitées enregistrées</p>
         {{demiJs}}
         <tr> 
-          <td>CPU</td>
-          <td>GPU</td>
-          <td>RAM</td>
+          <td>Activité</td>
+          <td>Gain ou perte de calorie dans la demi journée</td>
+          <td>Nouriture</td>
         </tr>
         <tr v-for="demiJ in demiJs" :key="demiJ.id">
           <td>{{demiJ}}</td>

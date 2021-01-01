@@ -304,10 +304,7 @@
 	height:100vh;
 	overflow: hidden;
 	background-image: url("https://cdn.dribbble.com/users/1722719/screenshots/11589060/media/e2cdc6e0be3656476595842d9981d615.jpg?compress=1&resize=1000x750");
-	background-size:66.66vw;
-	height: 685px;
-	overflow:hidden;
-
+	background-size:contain;
 }
 @keyframes apparitionlog{
 	from{
