@@ -189,9 +189,6 @@
 	
 }
 
-
-
-
 #login .text{
 	position: absolute;
 	text-align: center;
@@ -410,4 +407,161 @@
 	border-color:#2691d9;
 	transition: .5s;
 
+}
+
+#conversions{
+	margin:0;
+	padding:0;
+	font-family:'Nunito', sans-serif ;
+	height:calc(100vh - 66px);
+	overflow: hidden;
+	background-image: url("https://static3.rokna.net/thumbnail/kzw3RkMADHA0/4AWGqs3C3zj1VoMP2nMyyYaJhBmE6YiWGA6feRzhrZxvCV8YrxcqZ6-1-4nX83BW/%DA%AF%D8%B1%D8%B3%D9%86%D9%87+%2F+%D8%B1%DA%98%DB%8C%D9%85%2F+%D9%81%D8%B3%D8%AA+%D9%81%D9%88%D8%AF+%2F+%D8%B3%D8%A7%D9%84%D8%A7%D8%AF+%2F+%DA%AF%D8%B1%D8%B3%D9%86%DA%AF%DB%8C.jpg");
+	background-size: 100% 100%;
+}
+
+#conversions h1{
+	text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+	align-items: center;
+	margin-top: 100px;
+	margin-bottom: 30px;
+	background-color: transparent;
+	border: 2px solid black;
+	color:black;
+	font-size: 60px;
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 50%;
+}
+
+#conversions .conteneur{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-top: 100px;
+}
+
+#conversions .conteneur .volume{
+	display: flex;
+  	flex-direction: column;
+  	width: 250px;
+  	margin: 40px;
+  	height: 400px;
+  	border-radius: 10px;
+  	box-shadow: 2px 2px 5px black;
+  	padding: 10px;
+	background-color: rgb(249, 247, 240);
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+#conversions .conteneur .masse{
+	display: flex;
+	flex-direction: column;
+	width: 250px;
+	margin: 40px;
+	height: 400px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 5px black;
+	padding: 10px;
+	background-color: rgb(249, 247, 240);
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+#conversions .conteneur .personne{
+	display: flex;
+	flex-direction: column;
+	width: 250px;
+	margin: 40px;
+	height: 400px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 5px black;
+	padding: 10px;
+	background-color: rgb(249, 247, 240);
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+#conversions .conteneur .unite-volume{
+	display: flex;
+	flex-direction: column;
+	width: 250px;
+	margin: 40px;
+	height: 400px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 5px black;
+	padding: 10px;
+	background-color: rgb(249, 247, 240);
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+#conversions .conteneur .unite-masse{
+	display: flex;
+	flex-direction: column;
+	width: 250px;
+	margin: 40px;
+	height: 400px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 5px black;
+	padding: 10px;
+	background-color: rgb(249, 247, 240);
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+#conversions .conteneur p{
+	text-align: center;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+#conversions .conteneur input{
+	text-align: center;
+	margin-bottom: 10px;
+}
+#conversions .conteneur select{
+	text-align: center;
+	margin-bottom: 10px;
+}
+#conversions .conteneur .fa-arrow-right{
+	text-align: center;
+	margin-bottom: 10px;
+}
+#conversions .conteneur .fa-divide{
+	text-align: center;
+	margin-bottom: 10px;
+}
+#conversions .fa-balance-scale{
+	margin-top: 10px;
+	text-align: center;
+}
+#conversions .fa-utensils{
+	margin-top: 10px;
+	text-align: center;
+}
+#conversions .fa-child{
+	margin-top: 10px;
+	text-align: center;
+}
+#conversions .fa-tint{
+	margin-top: 10px;
+	text-align: center;
+}
+#conversions .fa-drumstick-bite{
+	margin-top: 10px;
+	text-align: center;
+}
+#conversions .conteneur > div:hover {
+	transform: scale(1.05);
+	transition: 0.5s;
+	box-shadow: 2px 2px 2px 1px lightgrey;
+}
+#conversions .conteneur > div p:last-child {
+	margin-top: auto;
+	margin-bottom: 15px;
 }

@@ -1,7 +1,9 @@
 <template>
   <div id="conversions">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <h1>Conversions</h1>
-    <div>
+    <div class="conteneur">
+      <div class="volume"><i class="fas fa-balance-scale"></i>
       <p>Conversion d'unités de volume</p>
       <input type="number" v-model="UV" />
       <select v-model="V1">
@@ -17,10 +19,9 @@
         <option value="100">Centilitres</option>
         <option value="1000">Millilitres</option>
       </select>
-      <br /> 
       <p>Résultat : {{UniteDeVolume()}}</p>
-      <br />
-      <br />
+      </div>
+      <div class="masse"><i class="fas fa-utensils"></i>
       <p>Conversion d'unités de masse</p>
       <input type="number" v-model="UM" />
       <select v-model="M1">
@@ -36,19 +37,17 @@
         <option value="0.01">Centigrammes</option>
         <option value="0.001">Milligrammes</option>
       </select>
-      <br /> 
       <p>Résultat : {{UniteDeMasse()}}</p>
-      <br />
-      <br />
+      </div>
+      <div class="personne"><i class="fas fa-child"></i>
       <p>Conversion pour un nombre de personnes</p>
       <input type="number" v-model="UPV"/>
       <input type="number" placeholder="X personne" v-model="PV1" />
       <p>pour</p>
       <input type="number" placeholder="X personne" v-model="PV2" />
-      <br /> 
       <p>Résultat : {{UnitePersonne()}}</p>
-      <br />
-      <br />
+      </div>
+      <div class="unite-volume"><i class="fas fa-tint"></i>
       <p>Conversion de fractions d'unités de volume</p>
       <input type="number" v-model="UFV1" />
       <i class="fas fa-divide"></i>
@@ -65,11 +64,10 @@
         <option value="10">Décilitres</option>
         <option value="100">Centilitres</option>
         <option value="1000">Millilitres</option>
-      </select>
-      <br /> 
+      </select> 
       <p>Résultat : {{FractionDeVolume()}}</p>
-      <br />
-      <br />
+      </div>
+      <div class="unite-masse"><i class="fas fa-drumstick-bite"></i>
       <p>Conversion de fractions d'unités de masse</p>
       <input type="number" v-model="UFM1" />
       <i class="fas fa-divide"></i>
@@ -87,8 +85,8 @@
         <option value="0.01">Centigrammes</option>
         <option value="0.001">Milligrammes</option>
       </select>
-      <br /> 
       <p>Résultat : {{FractionDeMasse()}}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -123,13 +121,22 @@ module.exports = {
       return this.UM*parseFloat(this.M1)*parseFloat(this.M2)
     },
     UnitePersonne(){
-      return this.UPV/this.P1*this.P2
+      let result = this.UPV/this.P1*this.P2
+      if (isNaN(result))
+        return 0;
+      return result;
     },
     FractionDeVolume(){
-      return this.UFV1/this.UFV2*parseFloat(this.FV1)*parseInt(this.FV2)
+      let result = this.UFV1/this.UFV2*parseFloat(this.FV1)*parseInt(this.FV2)
+      if (isNaN(result))
+        return 0;
+      return result;
     },
     FractionDeMasse(){
-      return this.UFM1/this.UFM2*parseFloat(this.FM1)*parseFloat(this.FM2)
+      let result = this.UFM1/this.UFM2*parseFloat(this.FM1)*parseFloat(this.FM2)
+      if (isNaN(result))
+        return 0;
+      return result;
     }
   }
 }
