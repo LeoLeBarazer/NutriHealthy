@@ -5,7 +5,7 @@
     <div class="conteneur">
       <div class="volume"><i class="fas fa-balance-scale"></i>
       <p>Conversion d'unités de volume</p>
-      <input type="number" v-model="UV" />
+      <input type="number" v-model="UV" placeholder="0 unité" />
       <select v-model="V1">
         <option value="1">Litres</option>
         <option value="0.1">Décilitres</option>
@@ -23,7 +23,7 @@
       </div>
       <div class="masse"><i class="fas fa-utensils"></i>
       <p>Conversion d'unités de masse</p>
-      <input type="number" v-model="UM" />
+      <input type="number" v-model="UM" placeholder="0 unité" />
       <select v-model="M1">
         <option value="0.001">Kilogrammes</option>
         <option value="1">Grammes</option>
@@ -41,7 +41,7 @@
       </div>
       <div class="personne"><i class="fas fa-child"></i>
       <p>Conversion pour un nombre de personnes</p>
-      <input type="number" v-model="UPV"/>
+      <input type="number" v-model="UPV" placeholder="0 unité"/>
       <input type="number" placeholder="X personne" v-model="PV1" />
       <p>pour</p>
       <input type="number" placeholder="X personne" v-model="PV2" />
@@ -49,9 +49,9 @@
       </div>
       <div class="unite-volume"><i class="fas fa-tint"></i>
       <p>Conversion de fractions d'unités de volume</p>
-      <input type="number" v-model="UFV1" />
+      <input type="number" v-model="UFV1" placeholder="0 unité" />
       <i class="fas fa-divide"></i>
-      <input type="number" v-model="UFV2" />
+      <input type="number" v-model="UFV2" placeholder="0 unité" />
       <select v-model="FV1">
         <option value="1">Litres</option>
         <option value="0.1">Décilitres</option>
@@ -69,9 +69,9 @@
       </div>
       <div class="unite-masse"><i class="fas fa-drumstick-bite"></i>
       <p>Conversion de fractions d'unités de masse</p>
-      <input type="number" v-model="UFM1" />
+      <input type="number" v-model="UFM1" placeholder="0 unité" />
       <i class="fas fa-divide"></i>
-      <input type="number" v-model="UFM2" />
+      <input type="number" v-model="UFM2" placeholder="0 unité" />
       <select v-model="FM1">
         <option value="0.001">Kilogrammes</option>
         <option value="1">Grammes</option>
@@ -94,31 +94,37 @@
 module.exports = {
   data: function () {
     return {
-      UV: 0,
+      UV: "",
       V1: "1",
       V2: "1",
-      UM: 0,
+      UM: "",
       M1: "1",
       M2: "1",
-      UPV: 0,
+      UPV: "",
       PV1: "",
       PV2: "",
-      UFV1: 0,
-      UFV2: 0,
+      UFV1: "",
+      UFV2: "",
       FV1: "1",
       FV2: "1",
-      UFM1: 0,
-      UFM2: 0,
+      UFM1: "",
+      UFM2: "",
       FM1: "1",
       FM2: "1"
     }
   },
   methods: {
     UniteDeVolume(){
-      return this.UV*parseFloat(this.V1)*parseInt(this.V2)
+      let result = this.UV*parseFloat(this.V1)*parseInt(this.V2)
+      if (isNaN(result))
+        return 0;
+      return result;
     },
     UniteDeMasse(){
-      return this.UM*parseFloat(this.M1)*parseFloat(this.M2)
+      let result = this.UM*parseFloat(this.M1)*parseFloat(this.M2)
+      if (isNaN(result))
+        return 0;
+      return result;
     },
     UnitePersonne(){
       let result = this.UPV/this.P1*this.P2

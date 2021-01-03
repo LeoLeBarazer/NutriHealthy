@@ -410,13 +410,11 @@
 }
 
 #conversions{
-	margin:0;
-	padding:0;
 	font-family:'Nunito', sans-serif ;
-	height:calc(100vh - 66px);
 	overflow: hidden;
+	height: 110vh;
 	background-image: url("https://static3.rokna.net/thumbnail/kzw3RkMADHA0/4AWGqs3C3zj1VoMP2nMyyYaJhBmE6YiWGA6feRzhrZxvCV8YrxcqZ6-1-4nX83BW/%DA%AF%D8%B1%D8%B3%D9%86%D9%87+%2F+%D8%B1%DA%98%DB%8C%D9%85%2F+%D9%81%D8%B3%D8%AA+%D9%81%D9%88%D8%AF+%2F+%D8%B3%D8%A7%D9%84%D8%A7%D8%AF+%2F+%DA%AF%D8%B1%D8%B3%D9%86%DA%AF%DB%8C.jpg");
-	background-size: 100% 100%;
+	background-size: cover;
 }
 
 #conversions h1{
@@ -457,6 +455,7 @@
 	background-color: rgb(249, 247, 240);
 	box-sizing: border-box;
 	overflow: hidden;
+	border: 1px solid black;
 }
 
 #conversions .conteneur .masse{
@@ -471,6 +470,7 @@
 	background-color: rgb(249, 247, 240);
 	box-sizing: border-box;
 	overflow: hidden;
+	border: 1px solid black;
 }
 
 #conversions .conteneur .personne{
@@ -485,6 +485,7 @@
 	background-color: rgb(249, 247, 240);
 	box-sizing: border-box;
 	overflow: hidden;
+	border: 1px solid black;
 }
 
 #conversions .conteneur .unite-volume{
@@ -499,6 +500,7 @@
 	background-color: rgb(249, 247, 240);
 	box-sizing: border-box;
 	overflow: hidden;
+	border: 1px solid black;
 }
 
 #conversions .conteneur .unite-masse{
@@ -513,6 +515,7 @@
 	background-color: rgb(249, 247, 240);
 	box-sizing: border-box;
 	overflow: hidden;
+	border: 1px solid black;
 }
 
 #conversions .conteneur p{
@@ -559,7 +562,8 @@
 #conversions .conteneur > div:hover {
 	transform: scale(1.05);
 	transition: 0.5s;
-	box-shadow: 2px 2px 2px 1px lightgrey;
+	border: 1px solid black;
+	box-shadow: none;
 }
 #conversions .conteneur > div p:last-child {
 	margin-top: auto;
