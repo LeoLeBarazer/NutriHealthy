@@ -31,8 +31,8 @@
         </form>
         <button class="button1" type="submit" @click="AddDemiJ()">Ajouter</button>
         <p>vos activitées enregistrées</p>
-        {{demiJs}}
-        <tr> 
+       {{demijs}}
+        <!--<tr> 
           <td>Activité</td>
           <td>Gain ou perte de calorie dans la demi journée</td>
           <td>Nouriture</td>
@@ -40,7 +40,7 @@
         <tr v-for="demiJ in demiJs" :key="demiJ.id">
           <td>{{demiJ}}</td>
           <td>{{demiJ}}</td>
-        </tr>
+        </tr>-->
     </div>
 </template>
 
@@ -49,12 +49,7 @@ module.exports = {
   props: {
       sports: {type: Array, default: []},
       nourritures: {type: Array, default: []},
-      demiJs:  {
-        type: Array,
-        default() {
-            return []
-        }
-      }
+      demijs: {type: Array, default: []},
   },
   data() {
       return {

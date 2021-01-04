@@ -77,7 +77,7 @@ var app = new Vue({
         async AddDemiJ(newDemiJ){
             console.log('CCCCCCC');
             const res = await axios.post('/api/suivit', newDemiJ)
-            this.demiJ.push(res.data)
+            this.demiJs.push(res.data)
         }
     }
 })
