@@ -31,8 +31,8 @@
         </form>
         <button class="button1" type="submit" @click="AddDemiJ()">Ajouter</button>
         <p>vos activités enregistrées</p>
-        {{demiJs}}
-        <tr> 
+        {{demijs}}
+        <!--<tr> 
           <td>Activité</td>
           <td>Gain ou perte de calories dans la demi-journée</td>
           <td>Nourriture</td>
