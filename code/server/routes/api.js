@@ -158,10 +158,10 @@ router.post('/arepas', async(req, res) => {
 })
 
 
-//Gérrer le suivit
+//Gérrer le suivi
 
 //récup les activitées/sport
-router.get('/suivit', async(req, res) => {
+router.get('/suivi', async(req, res) => {
     // verifie si utilisateur connecté
     if (req.session.userId === undefined) {
         res.status(401).json({ message: 'Unauthorized' })
@@ -180,7 +180,7 @@ router.get('/suivit', async(req, res) => {
 })
 
 //poster une nouvelle demi journée
-router.post('/suivit', async(req, res) => {
+router.post('/suivi', async(req, res) => {
     const activite = req.body.activite;
     const temps = req.body.temps;
     const type = req.body.type;

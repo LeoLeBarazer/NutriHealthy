@@ -10,7 +10,7 @@ const routes = [
     { path: '/', component: Home },
     { path: '/connexion', component: Connexion },
     { path: '/register', component: Register },
-    { path: '/suivit', component: Suivit },
+    { path: '/suivi', component: Suivit },
     { path: '/asport', component: ASport },
     { path: '/arepas', component: ARepas },
     { path: '/conversions', component: Conversions },
@@ -30,7 +30,7 @@ var app = new Vue({
         menu_state:false
     },
     async mounted() {
-        axios.get('/api/suivit').then(res =>{this.demiJs = res.data})
+        axios.get('/api/suivi').then(res =>{this.demiJs = res.data})
         console.log(demiJs); //erreur là 
 
         axios.get('/api/').then(res =>{
@@ -76,7 +76,7 @@ var app = new Vue({
 
         async AddDemiJ(newDemiJ){
             console.log('CCCCCCC');
-            const res = await axios.post('/api/suivit', newDemiJ)
+            const res = await axios.post('/api/suivi', newDemiJ)
             this.demiJ.push(res.data)
         }
     }
