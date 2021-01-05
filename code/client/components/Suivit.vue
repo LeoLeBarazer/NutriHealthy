@@ -40,7 +40,7 @@
         <tr v-for="demiJ in demiJs" :key="demiJ.id">
           <td>{{demiJ}}</td>
           <td>{{demiJ}}</td>
-        </tr>
+        </tr>-->
     </div>
 </template>
 
@@ -49,12 +49,7 @@ module.exports = {
   props: {
       sports: {type: Array, default: []},
       nourritures: {type: Array, default: []},
-      demiJs:  {
-        type: Array,
-        default() {
-            return []
-        }
-      }
+      demijs: {type: Array, default: []},
   },
   data() {
       return {
