@@ -26,12 +26,12 @@ var app = new Vue({
     data: {
         nourritures: [],
         sports: [],
-        demiJs: [],
+        demijs: [],
         menu_state:false
     },
     async mounted() {
-        axios.get('/api/suivi').then(res =>{this.demiJs = res.data})
-        console.log(demiJs); //erreur là 
+        axios.get('/api/suivi').then(res =>{this.demijs = res.data})
+        //console.log(demijs); //erreur là 
 
         axios.get('/api/').then(res =>{
             let Bigtab = res.data
@@ -77,7 +77,7 @@ var app = new Vue({
         async AddDemiJ(newDemiJ){
             console.log('CCCCCCC');
             const res = await axios.post('/api/suivi', newDemiJ)
-            this.demiJ.push(res.data)
+            this.demijs.push(res.data)
         }
     }
 })
