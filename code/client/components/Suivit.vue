@@ -33,16 +33,24 @@
         <p>vos activités enregistrées</p>
         <div v-for="demij in demijs" :key="demij.id">
                 {{demij.sport}}
+                {{demij.nourriture}}
         </div>
-        <!--<tr> 
-          <td>Activité</td>
-          <td>Gain ou perte de calories dans la demi-journée</td>
-          <td>Nourriture</td>
-        </tr>
-        <tr v-for="demiJ in demiJs" :key="demiJ.id">
-          <td>{{demiJ}}</td>
-          <td>{{demiJ}}</td>
-        </tr>-->
+        <table cellpadding="15" id="table" class="case">
+            <tr> 
+                <td>sports</td>
+                <td>Votre total de calories</td>
+                <td>nourritures</td>
+            </tr>
+            <!--<tr v-for="ordinateur in ordinateurs" :key="ordinateur.id">
+                <td>{{ordinateur.cpu}}</td>
+                <td>{{ordinateur.gpu}}</td>
+                <td>{{ordinateur.ram}}</td>
+                <td>{{ordinateur.refroidissement}}</td>
+                <td>{{ordinateur.stockage}}</td>
+                <td>{{ordinateur.alimentation}}</td>
+            </tr>-->
+      </table>
+      <button class="button1" @click="Rapport(demijs,sports,nourritures)">Voir un rapport sur sa vie</button>
     </div>
 </template>
 
@@ -52,6 +60,9 @@ module.exports = {
       sports: {type: Array, default: []},
       nourritures: {type: Array, default: []},
       demijs: {type: Array, default: []},
+      //cal: {type: Array, default: []},
+      //Rap_sport: {type: Array, default: []},
+      //Rap_nourriture: {type: Array, default: []},
   },
   data() {
       return {
@@ -61,6 +72,19 @@ module.exports = {
               type: "",
               quantite: ""
           },
+          Rap_sport:{
+              nom:[],
+              cal:[],
+          },
+           Rap_nour:{
+                nom:[],
+                cal:[],
+           },
+           Rap_cal:{
+               Plus:[],
+               Moins:[],
+               Somme:[],
+           }
       };
   },
   methods: {
@@ -72,7 +96,49 @@ module.exports = {
           console.log('BBBBBBB');
           console.log(this.newDemiJ);
       },
-  },
+
+      Rapport(demijs,sports,nourritures){
+          var i;
+          var list_sport = new Array (demijs[0].sport);
+          var list_nour = new Array (demijs[0].nourriture);
+          console.log(demijs);
+          
+          //this.demijs.sport;
+          console.log(list_sport[0]);
+          console.log("demijs[0].sport.length = "+ demijs[0].sport.length);
+          console.log("sports = "+ sports[4].activite);
+          console.log(this.Rap_sport.nom);
+          for (i=0; i<demijs[0].sport.length; i++){
+              //console.log(sports[i].activite);
+              if (list_sport[0][i]==0){
+                  console.log("list_sport[0][i] =" + list_sport[0][i]);
+                  this.Rap_sport.nom.push("sports");
+                  this.Rap_sport.cal.push("cal");
+
+                  this.Rap_nour.nom.push("nourriture");
+                  this.Rap_nour.cal.push("cal");
+              }
+              else{
+                  console.log("list_sport[0][i] =" + list_sport[0][i]);
+                  this.Rap_sport.nom.push(sports[list_sport[0][i]-1].activite);
+                  this.Rap_sport.cal.push(sports[list_sport[0][i]-1].calories);
+
+                  this.Rap_nour.nom.push(nourritures[list_nour[0][i]-1].ingredient);
+                  this.Rap_nour.cal.push(nourritures[list_nour[0][i]-1].calories);
+                  console.log("i=" + i);
+              }
+          }
+          console.log("sortie:");
+          console.log(this.Rap_sport);
+          console.log(this.Rap_nour);
+          console.log(list_sport);
+      },
+
+      Somme(){
+
+      }
+  }
 };
 
 </script>
+
