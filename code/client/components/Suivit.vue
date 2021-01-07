@@ -37,14 +37,6 @@
                 <td>Votre total de calories</td>
                 <td>nourritures</td>
             </tr>
-            <!--<tr v-for="ordinateur in ordinateurs" :key="ordinateur.id">
-                <td>{{ordinateur.cpu}}</td>
-                <td>{{ordinateur.gpu}}</td>
-                <td>{{ordinateur.ram}}</td>
-                <td>{{ordinateur.refroidissement}}</td>
-                <td>{{ordinateur.stockage}}</td>
-                <td>{{ordinateur.alimentation}}</td>
-            </tr>-->
       </table>
       <button class="button1" @click="Rapport(demijs,sports,nourritures)">Voir un rapport sur sa vie</button>
     </div>
@@ -90,23 +82,6 @@ module.exports = {
           console.log(this.newDemiJ);
       },
 
-    /*Somme(){
-          var i;
-          var somme;
-            for (i=0; i<Rap_nour.nom.length; i++){
-              //console.log(sports[i].activite);
-              if (i==0){
-                  //console.log("list_sport[0][i] =" + list_sport[0][i]);
-                  this.Rap_cal.somme.push("Rapport de calories");
-              }
-              else{
-                  somme = Rap_nour.cal[i] - Rap_sport.cal[i];
-                  console.log("i=" + i);
-                  Rap_cal.somme.push(somme);
-              }
-        }
-        console.log("Rap_cal.somme = "+ Rap_cal.somme);
-     },*/
 
       Rapport(demijs,sports,nourritures){
           var i;

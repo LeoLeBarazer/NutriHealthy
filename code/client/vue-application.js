@@ -63,11 +63,13 @@ var app = new Vue({
             console.log(sport);
             const res = await axios.post('/api/asport', sport)
             this.sports.push(res.data)
+            window.location.href = "#/suivi"
         },
         async AddNourritures(nourriture) {
             console.log(nourriture);
             const res = await axios.post('/api/arepas', nourriture)
             this.nourritures.push(res.data)
+            window.location.href = "#/suivi"
         },
 
         CloseMenu(){

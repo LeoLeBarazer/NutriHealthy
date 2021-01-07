@@ -12,9 +12,9 @@
                         <p> Mot de passe</p>
                         <input class="texte-connexion" type="text" v-model="password" placeholder="Entrez votre mot de passe"/>
                         <br/>
-                        <input type="submit" name="" value="Sign up"> 
-                        <br/> 
-                        <button type="submit" @click="save()">Login</button> <br/>
+                         
+                        <button type="submit" @click="save()">Sign up</button> <br/>
+                        <button type="submit" window.location.href = "#/connexion" >Login</button> <br/>
                         <video class="video" fullscreen width="1920" height="1080" loop autoplay muted id=VideoId>
                             <source src="Avocado.mp4" type="video/mp4">
                         </video>
