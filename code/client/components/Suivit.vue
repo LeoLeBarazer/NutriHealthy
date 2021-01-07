@@ -31,10 +31,6 @@
         </form>
         <button class="button1" type="submit" @click="AddDemiJ()">Ajouter</button>
         <p>vos activités enregistrées</p>
-        <div v-for="demij in demijs" :key="demij.id">
-                {{demij.sport}}
-                {{demij.nourriture}}
-        </div>
         <table cellpadding="15" id="table" class="case">
             <tr> 
                 <td>sports</td>
@@ -60,9 +56,6 @@ module.exports = {
       sports: {type: Array, default: []},
       nourritures: {type: Array, default: []},
       demijs: {type: Array, default: []},
-      //cal: {type: Array, default: []},
-      //Rap_sport: {type: Array, default: []},
-      //Rap_nourriture: {type: Array, default: []},
   },
   data() {
       return {
@@ -84,7 +77,7 @@ module.exports = {
                Plus:[],
                Moins:[],
                Somme:[],
-           }
+           },
       };
   },
   methods: {
@@ -97,8 +90,27 @@ module.exports = {
           console.log(this.newDemiJ);
       },
 
+    /*Somme(){
+          var i;
+          var somme;
+            for (i=0; i<Rap_nour.nom.length; i++){
+              //console.log(sports[i].activite);
+              if (i==0){
+                  //console.log("list_sport[0][i] =" + list_sport[0][i]);
+                  this.Rap_cal.somme.push("Rapport de calories");
+              }
+              else{
+                  somme = Rap_nour.cal[i] - Rap_sport.cal[i];
+                  console.log("i=" + i);
+                  Rap_cal.somme.push(somme);
+              }
+        }
+        console.log("Rap_cal.somme = "+ Rap_cal.somme);
+     },*/
+
       Rapport(demijs,sports,nourritures){
           var i;
+          var somme;
           var list_sport = new Array (demijs[0].sport);
           var list_nour = new Array (demijs[0].nourriture);
           console.log(demijs);
@@ -117,26 +129,53 @@ module.exports = {
 
                   this.Rap_nour.nom.push("nourriture");
                   this.Rap_nour.cal.push("cal");
+
+                  this.Rap_cal.Somme.push("Rapport de calories");
               }
               else{
                   console.log("list_sport[0][i] =" + list_sport[0][i]);
+                  console.log("sport");
                   this.Rap_sport.nom.push(sports[list_sport[0][i]-1].activite);
                   this.Rap_sport.cal.push(sports[list_sport[0][i]-1].calories);
 
+                  console.log("nourriture");
                   this.Rap_nour.nom.push(nourritures[list_nour[0][i]-1].ingredient);
                   this.Rap_nour.cal.push(nourritures[list_nour[0][i]-1].calories);
+
+                  console.log("cal");
+                  somme = this.Rap_nour.cal[i] - this.Rap_sport.cal[i];
+                  console.log("somme = " + somme);
+                  this.Rap_cal.Somme.push(somme);
                   console.log("i=" + i);
               }
           }
           console.log("sortie:");
           console.log(this.Rap_sport);
           console.log(this.Rap_nour);
+          console.log(this.Rap_cal);
           console.log(list_sport);
-      },
 
-      Somme(){
-          
-      }
+
+          //Fonction addline
+          for (i=0; i<demijs[0].sport.length; i++){
+                var SP = this.Rap_sport.nom[i];
+                var NO = this.Rap_nour.nom[i];
+                var CA = this.Rap_cal.Somme[i];
+                var tableau= document.getElementById('table');
+                var newRow= tableau.insertRow(-1);
+
+                var cel1 = newRow.insertCell(0);
+                var cel2 = newRow.insertCell(1);
+                var cel3 = newRow.insertCell(2);
+
+                  cel1.innerText = SP;
+                  cel2.innerText = NO;
+                  cel3.innerText = CA;
+          }
+
+          //console.log("Rap_cal.somme = "+ Rap_cal.somme);
+          //window.Somme();
+      },
   }
 };
 
