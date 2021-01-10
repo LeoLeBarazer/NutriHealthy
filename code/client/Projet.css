@@ -59,7 +59,6 @@
     
 }
 .banniere{
-    background-image: url("https://cdn.discordapp.com/attachments/517778056065318912/781827373767065620/photo-1490818387583-1baba5e638af.png");    
     background-repeat: no-repeat;
     background-size: cover;
     height: 650px;
@@ -81,6 +80,7 @@
 	 line-height: 1.6;
 	 background: #ccc;
 	 overflow-x: hidden;
+    background-image: url("https://cdn.discordapp.com/attachments/517778056065318912/781827373767065620/photo-1490818387583-1baba5e638af.png");    
 }
  label .menu {
 	 position: absolute;
@@ -569,3 +569,108 @@
 	margin-top: auto;
 	margin-bottom: 15px;
 }
+
+#suivi{
+	background: rgb(249, 247, 240);
+	border-radius: 30px;
+	margin: 5% auto ;
+	margin-left: 10% !important;
+	margin-right: 10% !important;
+	
+	
+}
+
+#suivi .ajout {
+	margin: 2% auto;
+	text-align: center;
+}
+#suivi button {
+	border: none;
+    outline: none;
+    height: 40px;
+    background: rgb(196, 231, 245);
+    color: black;
+    font-size: 18px;
+    border-radius: 20px;
+    width: auto;
+	margin-bottom: 2%;
+	cursor: pointer;
+	padding-right: 2%;
+	padding-left: 2%;
+}	
+
+#suivi .activites {
+	margin: 2% auto ; 
+	text-align: center;
+}
+
+table {
+	background: white;
+	margin: 2% auto;
+	margin-top: 1%;
+	border-spacing: 0px;
+	border-radius: 20px;
+	
+}
+table tr:first-child td{
+    font-size: 18px;
+    color: black;
+    line-height: 1.4;
+	background-color: rgb(196, 231, 245);
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+td {
+	padding-left: 10px;
+	}
+
+#asport {
+	background: rgb(249, 247, 240);
+	border-radius: 30px;
+	margin: 2% auto;
+	text-align: center;
+	margin-left: 30% !important;
+	margin-right: 30% !important;
+}
+
+#arepas {
+	background: rgb(249, 247, 240);
+	border-radius: 30px;
+	margin: 2% auto;
+	text-align: center;
+	margin-left: 30% !important;
+	margin-right: 30% !important;
+}
+
+
+#asport button {
+	border: none;
+    outline: none;
+    height: 40px;
+    background: rgb(196, 231, 245);
+    color: black;
+    font-size: 18px;
+    border-radius: 20px;
+    width: auto;
+	margin-bottom: 2%;
+	cursor: pointer;
+	padding-right: 2%;
+	padding-left: 2%;
+}	
+
+
+#arepas button {
+	border: none;
+    outline: none;
+    height: 40px;
+    background: rgb(196, 231, 245);
+    color: black;
+    font-size: 18px;
+    border-radius: 20px;
+    width: auto;
+	margin-bottom: 2%;
+	cursor: pointer;
+	padding-right: 2%;
+	padding-left: 2%;
+}	
