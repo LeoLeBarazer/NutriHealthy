@@ -229,7 +229,7 @@
 	margin-bottom: 20px;
 }
 
-#login .div-connexion input[type="text"], input[type="password"]{
+#login .div-connexion input[type="email"], input[type="password"]{
 	border: none;
 	border-bottom: 1px solid black ;
 	background: transparent;
@@ -576,6 +576,8 @@
 	margin: 5% auto ;
 	margin-left: 10% !important;
 	margin-right: 10% !important;
+	font-family:'Nunito', sans-serif ;
+
 	
 	
 }
@@ -620,6 +622,7 @@ table tr:first-child td{
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+
 
 td {
 	padding-left: 10px;

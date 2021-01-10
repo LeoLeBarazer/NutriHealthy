@@ -7,10 +7,10 @@
                     <div class="textbox">
                         
                         <p> E-mail </p>
-                        <input class="texte-connexion" type="text" v-model="email" placeholder="Entrez votre e-mail"/>
+                        <input class="texte-connexion" type="email" v-model="email" placeholder="Entrez votre e-mail"/>
                         <br/>
                         <p> Mot de passe</p>
-                        <input class="texte-connexion" type="text" v-model="password" placeholder="Entrez votre mot de passe"/>
+                        <input class="texte-connexion" type="password" v-model="password" placeholder="Entrez votre mot de passe"/>
                         <br/>
                          
                         <button type="submit" @click="save()">Sign up</button> <br/>
