@@ -282,7 +282,7 @@
 
 #login .div-connexion button[type="submit"]:hover{
 	cursor: pointer;
-	background: #ffffff; ;
+	background: #ffffff;
 	color: #000;
 	border:solid black 1px;
 }
