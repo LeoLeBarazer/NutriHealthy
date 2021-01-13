@@ -1,10 +1,11 @@
 <template>
     <div id ="suivi">
         <div class="ajout">
-            <p>Ajoutez une demi-journée (avec une activité sportive et un repas) ou créez votre propre activité sportive ou repas.</p>
             <br>
             <router-link class="link"  to='/asport'>Ajoutez votre sport préféré</router-link>
                 <router-link class="link"  to='/arepas'>Ajoutez votre nourriture préférée</router-link>
+                <br><br><br>
+            <p>Ajoutez vos repas et activités :</p>
             <form @submit.prevent="AddDemiJ">
                 <select name="activite" id="activite" v-model="newDemiJ.activite" required>
                     <option value="">Saisir le nom de votre activité</option>
@@ -32,9 +33,10 @@
                 </select>
             </form>
             <button class="button1" type="submit" @click="AddDemiJ()">Ajouter</button>
+            <p>
         </div>
         <div class="activites">
-            <p>vos activités enregistrées :</p>
+            <p>Votre rapport de calories :</p>
             <table cellpadding="15" id="table" class="case">
                 <tr> 
                     <td>Activité</td>
@@ -42,7 +44,7 @@
                     <td>Calories</td>
                 </tr>
         </table>
-        <button class="button1" @click="Rapport(demijs,sports,nourritures)">Afficher mon rapport de calories</button>
+        <button class="button1" @click="Rapport(demijs,sports,nourritures)">Afficher</button>
         </div>
     </div>
 </template>
