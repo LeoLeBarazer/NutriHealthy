@@ -25,17 +25,16 @@
     text-decoration: none;
     color:black;
     text-transform: uppercase;
-    padding: 0;
+    padding: 2;
     margin: 0 10px;
     transition: 0.5s ease-in-out;
-    border-bottom: 3px solid transparent ;
-   
+	border-bottom: 3px solid transparent ;
 
 }
 
 .link:hover{
     border-color: black;
-    padding-bottom: 5px;
+	padding-bottom: 5px;
 }
 .link i{
     margin-right: 5px ;
@@ -46,9 +45,6 @@
     margin:0;
     margin-left:50vw;
     padding-top: 150px;
-
-
-  
 }
 .titre2{
     font-family: 'Nunito', sans-serif;
@@ -576,10 +572,7 @@
 	margin: 5% auto ;
 	margin-left: 10% !important;
 	margin-right: 10% !important;
-	font-family:'Nunito', sans-serif ;
 
-	
-	
 }
 
 #suivi .ajout {
@@ -599,9 +592,16 @@
 	cursor: pointer;
 	padding-right: 2%;
 	padding-left: 2%;
+    transition: 0.2s ease-in-out;
 }	
-
+#suivi button:hover{
+	cursor: pointer;
+	background: #ffffff; ;
+	color: #000;
+	border:solid black 1px;
+}
 #suivi .activites {
+	margin-top: 20%;
 	margin: 2% auto ; 
 	text-align: center;
 }
@@ -626,6 +626,7 @@ table tr:first-child td{
 
 td {
 	padding-left: 10px;
+	padding-right: 10px;
 	}
 
 #asport {
@@ -660,8 +661,15 @@ td {
 	cursor: pointer;
 	padding-right: 2%;
 	padding-left: 2%;
-}	
+    transition: 0.2s ease-in-out;
+}
 
+#asport button:hover{
+	cursor: pointer;
+	background: #ffffff; ;
+	color: #000;
+	border:solid black 1px;
+}
 
 #arepas button {
 	border: none;
@@ -676,4 +684,12 @@ td {
 	cursor: pointer;
 	padding-right: 2%;
 	padding-left: 2%;
+    transition: 0.2s ease-in-out;
 }	
+
+#arepas button:hover{
+	cursor: pointer;
+	background: #ffffff; ;
+	color: #000;
+	border:solid black 1px;
+}
